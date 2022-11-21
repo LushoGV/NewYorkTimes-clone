@@ -1,7 +1,24 @@
-import { Outlet } from "react-router-dom";
+import { useEffect } from "react";
+import { Outlet, useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 
 const Layout = () => {
+  const { section } = useParams();
+
+  useEffect(() => {
+    if (section)
+      document.title = `${
+        section === "us"
+          ? "U.S. News"
+          : section === "nyregion"
+          ? "New York"
+          : section.charAt(0).toUpperCase() + section.slice(1)
+      } - The New York Times`;
+    else
+      document.title =
+        "The New York Times - Breaking News, US News, World News and Videos";
+  }, [section]);
+
   return (
     <>
       <Navbar />

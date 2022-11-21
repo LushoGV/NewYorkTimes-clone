@@ -1,30 +1,22 @@
+import { useEffect } from "react";
 import { useQuery } from "react-query";
-import { useParams } from "react-router-dom";
 import { getHomeData } from "../api.js";
 import Aside from "../components/Aside.jsx";
 import BigArticle from "../components/BigArticle.jsx";
 import Loader from "../components/Loader.jsx";
 import OpinionSection from "../components/OpinionSection.jsx";
 import TripleArticle from "../components/TripleArticle.jsx";
-import { errorLinks } from "../config.js";
 
 const Home = () => {
   const { isLoading, data } = useQuery("homeData", () => getHomeData(), {
     refetchOnWindowFocus: false,
   });
-  const { section } = useParams();
 
   return (
     <>
       <section className="flex md:mx-0 flex-col-reverse lg:flex-row-reverse border-t-[0px] lg:border-t-[1px] border-t-black mt-[2px] w-full">
         <div className="flex flex-col-reverse lg:flex-col w-full lg:w-[30%] lg:mt-4">
-          {section && !errorLinks.includes(section) ? (
-            isLoading ? (
-              <Loader type={"asideWithImage"} />
-            ) : (
-              <Aside section={section} />
-            )
-          ) : isLoading ? (
+          {isLoading ? (
             <Loader type={"tripleArticle"} />
           ) : (
             <TripleArticle content={data.slice(8, 11)} />
