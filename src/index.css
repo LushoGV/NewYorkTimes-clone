@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.hoverTitleUnderline:hover h2 {
+    text-decoration-line: underline;
+}
+
+.hoverTitle:hover h2{
+    color: #5a5a5a;
+}

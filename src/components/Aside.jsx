@@ -20,33 +20,34 @@ const Aside = () => {
           {data !== null &&
             data.slice(0, 5).map((element, index) => {
               return (
-                <li
-                  className={`${
-                    data.slice(0, 5).length === index + 1
-                      ? "border-b-0"
-                      : index === 0
-                      ? "border-t-0 border-b-[1px]"
-                      : "border-b-[1px]"
-                  } md:mx-0 flex justify-between flex-row-reverse py-4 border-gray-300`}
-                  key={index}
-                >
-                  <img
-                    src={element.multimedia && element.multimedia[0].url}
-                    className="w-[91px] h-[91px] "
-                  />
+                <a key={index} href={`${element.url}`} className="hoverTitle">
+                  <li
+                    className={`${
+                      data.slice(0, 5).length === index + 1
+                        ? "border-b-0"
+                        : index === 0
+                        ? "border-t-0 border-b-[1px]"
+                        : "border-b-[1px]"
+                    } md:mx-0 flex justify-between flex-row-reverse py-4 border-gray-300`}
+                  >
+                    <img
+                      src={element.multimedia && element.multimedia[0].url}
+                      className="w-[91px] h-[91px] "
+                    />
 
-                  <div className="w-3/4 pr-3 md:pr-[15px] my-1 lg:mt-0">
-                    <h2 className="font-timesNewRoman font-bold text-sm text-left mt-1 lg:mt-0 leading-5">
-                      {element.title}
-                    </h2>
-                    <span className="text-xs text-gray-500 font-mini">
-                      {months[
-                        element.published_date.substring(5, 7) - 1
-                      ].substring(0, 3)}
-                      . {element.published_date.substring(8, 10)}
-                    </span>
-                  </div>
-                </li>
+                    <div className="w-3/4 pr-3 md:pr-[15px] my-1 lg:mt-0">
+                      <h2 className="font-timesNewRoman font-bold text-sm text-left mt-1 lg:mt-0 leading-5">
+                        {element.title}
+                      </h2>
+                      <span className="text-xs text-gray-500 font-mini">
+                        {months[
+                          element.published_date.substring(5, 7) - 1
+                        ].substring(0, 3)}
+                        . {element.published_date.substring(8, 10)}
+                      </span>
+                    </div>
+                  </li>
+                </a>
               );
             })}
         </ul>
