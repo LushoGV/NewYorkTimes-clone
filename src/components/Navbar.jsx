@@ -105,7 +105,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      <Nav lgNavbar={true} navState={navState} />
+      <Nav navState={navState} />
     </>
   );
 };

@@ -11,7 +11,7 @@ const GridArticle = ({ content }) => {
 
   if (data !== null) {
     return (
-      <section className="flex flex-col lg:flex-row pt-4 lg:pt-4 lg:border-t-[1px] border-black mt-[2px]">
+      <section className="flex flex-col w-full lg:flex-row pt-4 lg:pt-4 lg:border-t-[1px] border-black mt-[2px]">
         <div className="lg:max-w-[622.5px] w-full lg:pr-4">
           <BigArticle content={data[0]} index={0} columnMode={true} />
         </div>

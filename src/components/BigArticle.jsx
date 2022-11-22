@@ -35,8 +35,8 @@ const BigArticle = ({ content, index, columnMode }) => {
               alt=""
               className={
                 columnMode
-                  ? "h-72 md:h-96 mb-1"
-                  : "md:w-full lg:w-auto  lg:pl-2 h-72 md:h-96"
+                  ? " md:h-auto lg:h-96 mb-1"
+                  : "md:w-full lg:w-auto lg:pl-2  md:h-auto"
               }
             />
             <span

@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useQuery } from "react-query";
 import { getHomeData } from "../api.js";
 import Aside from "../components/Aside.jsx";
