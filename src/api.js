@@ -1,18 +1,16 @@
 import axios from "axios";
-import { useQueryClient } from "react-query";
 import { KEY } from "./config.js";
 
-export const getSectionData = async (section) => {
+export const getSectionData = async (section, setError) => {
     try {
       let res = await axios.get(`https://api.nytimes.com/svc/topstories/v2/${section}.json?api-key=${KEY}`);
       return res.data.results.filter(
         (element) => element.title !== "" && element.multimedia !== null
       );
     } catch (error) {
+      setError(error.response.status)
       return null
-    }
-  
-      
+    } 
 }
 
 export const getHomeData = async () => {

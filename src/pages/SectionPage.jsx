@@ -1,29 +1,34 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getSectionData } from "../api.js";
 import GridArticle from "../components/GridArticle.jsx";
 import RowArticles from "../components/RowArticles.jsx";
-import { listSection, months } from "../config.js";
+import { months } from "../config.js";
 import { useState, useEffect } from "react";
 import Loader from "../components/Loader.jsx";
+import ErrorPage from "./ErrorPage.jsx";
 
 const SectionPage = () => {
   const { section } = useParams();
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const navigate = useNavigate();
+  const [isError, setIsError] = useState(false);
 
   const getData = async () => {
     setIsLoading(true);
-    const res = await getSectionData(section);
+    const res = await getSectionData(section, setIsError);
     setData(res);
     setIsLoading(false);
   };
+
+  console.log(isError);
 
   useEffect(() => {
     getData();
   }, [section]);
 
   if (isLoading) return <Loader type={"section"} />;
+
+  if (isError && isError === 429) return <ErrorPage code={isError} />;
 
   return (
     <>
