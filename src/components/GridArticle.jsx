@@ -37,7 +37,7 @@ const GridArticle = ({ content }) => {
           </article>
         </a>
         <div className="lg:pl-4 lg:w-1/5 pt-4 lg:py-0">
-          <a href={`${data[2].short_url}`} className="hoverTitleUnderline">
+          <a href={`${data[2].short_url}`} target="_blank" className="hoverTitleUnderline">
             <article className="pb-4">
               <h2 className="text-[1.4375rem] md:text-2xl font-semibold pb-3 md:pb-3 leading-[1.15em] lg:leading-[1.2em] tracking-tighter font-timesNewRoman">
                 {data[2].title}
@@ -54,7 +54,7 @@ const GridArticle = ({ content }) => {
               </div>
             </article>
           </a>
-          <a href={`${data[3].short_url}`} className="hoverTitleUnderline">
+          <a href={`${data[3].short_url}`} target="_blank" className="hoverTitleUnderline">
             <article className="border-t-[1px] border-gray-300 py-4">
               <h2 className="text-[1.4375rem] md:text-2xl font-semibold pb-3 md:pb-3 leading-[1.15em] lg:leading-[1.2em] tracking-tighter font-timesNewRoman">
                 {data[3].title}

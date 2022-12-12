@@ -27,6 +27,7 @@ const OpinionSection = () => {
             return (
               <a
                 href={`${element.short_url}`}
+                target="_blank"
                 className="hoverTitle"
                 key={index}
               >

@@ -15,6 +15,7 @@ const RowArticles = ({ content }) => {
           return (
             <a
               href={`${element.short_url}`}
+              target="_blank"
               key={index}
               className="hoverTitleUnderline"
             >

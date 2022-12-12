@@ -26,14 +26,14 @@ const Header = () => {
         <header className="flex flex-col-reverse lg:flex-col items-center lg:items-end justify-center lg:justify-between py-1 lg:pt-0 md:mx-2 xl:mx-0 z-20 bg-white">
           <div className="w-full justify-between py-1 mb-[-22px] hidden lg:flex">
             <div className="w-2/5 px-2">
-              <button className="pr-2 mr-2 text-[19px]">
+              <button className="pr-2 mr-2 text-[19px] hover:cursor-auto">
                 <TbMenu2 />
               </button>
-              <button className="p-2 text-[19px]">
+              <button className="p-2 text-[19px] hover:cursor-auto">
                 <BiSearchAlt2 />
               </button>
             </div>
-            <ul className="flex gap-4 w-2/5 justify-center uppercase text-[10px] font-medium text-gray-800 items-center pb-1">
+            <ul className="z-20 flex gap-4 w-2/5 justify-center uppercase text-[10px] font-medium text-gray-800 items-center pb-1">
               <li>u.s.</li>
               <li className="font-bold text-black">international</li>
               <li>canada</li>
@@ -44,7 +44,7 @@ const Header = () => {
               <button className="cursor-default bg-[#567b95] text-white font-bold mr-2 h-[32px] text-xs px-4 uppercase rounded-[4px] border-[1px] border-[rgb(50, 104, 145)]">
                 Subscribe for $0.25/week
               </button>
-              <button className="cursor-default bg-[#567b95] text-white font-bold h-[32px] text-xs px-2 uppercase rounded-[4px] border-[1px] border-[rgb(50, 104, 145)]">
+              <button className="cursor-default bg-[#567b95] text-white font-bold h-[32px] text-xs px-3 uppercase rounded-[4px] border-[1px] border-[rgb(50, 104, 145)]">
                 Log in
               </button>
             </div>

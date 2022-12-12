@@ -20,7 +20,7 @@ const Aside = () => {
           {data !== null &&
             data.slice(0, 5).map((element, index) => {
               return (
-                <a key={index} href={`${element.url}`} className="hoverTitle">
+                <a key={index} href={`${element.url}`} target="_blank" className="hoverTitle">
                   <li
                     className={`${
                       data.slice(0, 5).length === index + 1

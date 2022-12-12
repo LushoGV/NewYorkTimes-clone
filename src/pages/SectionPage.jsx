@@ -20,8 +20,6 @@ const SectionPage = () => {
     setIsLoading(false);
   };
 
-  console.log(isError);
-
   useEffect(() => {
     getData();
   }, [section]);

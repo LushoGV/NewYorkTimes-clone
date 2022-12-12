@@ -16,7 +16,6 @@ export const getSectionData = async (section, setError) => {
 export const getHomeData = async () => {
     let res = await axios.get(`https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${KEY}`);
 
-
     return res.data.results.filter(
       (element) => element.title !== "" && element.multimedia !== null
     );

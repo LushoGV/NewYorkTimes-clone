@@ -12,6 +12,7 @@ const BigArticle = ({ content, index, columnMode }) => {
     return (
       <a
         href={`${data.short_url}`}
+        target="_blank"
         className={columnMode ? "hoverTitleUnderline" : "hoverTitle"}
       >
         <div
